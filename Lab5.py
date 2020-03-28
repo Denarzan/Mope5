@@ -3,7 +3,7 @@ import numpy as np
 import sklearn.linear_model as lm
 from scipy.stats import f, t
 from functools import partial
-from pyDOE2 import *
+from pyDOE2 import ccdesign 
 
 
 x_range = ((-2, 5), (0, 3), (-9, 10))
@@ -46,9 +46,9 @@ def plan_matrix5(n, m):
     for i in range(4, 11):
         x_norm = np.insert(x_norm, i, 0, axis=1)
 
-    l = 1.73  # l=sqrt(k), де k - кількість факторів
+    l = 1.215 
 
-    # матриця планування з нормованими значеннями
+    # матриця планування з нормовaними значеннями
     for i in range(len(x_norm)):  
         for j in range(len(x_norm[i])):
             if x_norm[i][j] < -1 or x_norm[i][j] > 1:
